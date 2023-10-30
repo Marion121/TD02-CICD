@@ -17,5 +17,4 @@ jobs:
           java-version: 17
           distribution: "temurin"
       - name: Build and test with Maven
-        run: |
-          mvn clean verify -f ./simple-api-student/pom.xml
+        run: mvn clean verify -f ./simple-api-student/pom.xml
