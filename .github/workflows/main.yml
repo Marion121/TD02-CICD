@@ -19,5 +19,6 @@ jobs:
           distribution: 'adopt'
           java-version: 17
 
-      - name: Build and test with Maven
-        run: mvn clean verify -f ./simple-api-student/pom.xml
+      - name: Build and test with
+        working-directory: simple-api-student
+        run: mvn clean verify
