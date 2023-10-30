@@ -6,12 +6,11 @@ on:
       - main
       - develop
   pull_request:
-
 jobs:
   test-backend:
     runs-on: ubuntu-22.04
     env:
-      working-directory: ./simpleapi
+      working-directory: ./simple-api-student
     defaults:
       run:
         working-directory: ${{ env.working-directory }}
