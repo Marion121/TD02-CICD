@@ -10,6 +10,11 @@ on:
 jobs:
   test-backend:
     runs-on: ubuntu-22.04
+    env:
+      working-directory: ./simpleapi
+      defaults:
+        run:
+          working-directory: ${{ env.working-directory }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2.5.0
@@ -21,5 +26,4 @@ jobs:
           java-version: 17  # Change this to the desired JDK version
 
       - name: Build and test with Maven
-        run: |
-          mvn clean verify -f ./simple-api-student/pom.xml
+        run: mvn clean verify 
