@@ -1,5 +1,4 @@
 name: CI devops 2023
-
 on:
   push:
     branches:
@@ -9,11 +8,6 @@ on:
 jobs:
   test-backend:
     runs-on: ubuntu-22.04
-    env:
-      working-directory: ./simple-api-student
-    defaults:
-      run:
-        working-directory: ${{ env.working-directory }}
     steps:
       #checkout your github code using actions/checkout@v2.5.0
       - uses: actions/checkout@v4
@@ -28,4 +22,4 @@ jobs:
 
       #finally build your app with the latest command
       - name: Build and test with Maven
-        run: mvn clean verify
+        run: mvn clean verify -f ./simple-api-student/pom.xml
